@@ -1,0 +1,36 @@
+<h1>Listado de productos</h1>
+<p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>id_producto</th>
+      <th>precio_producto</th>
+      <th>nombre_producto</th>
+      <th>Operaciones</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+    <tr>
+      <td>{{ product.id_producto }}</td>
+      <td>{{ product.precio_producto }}</td>
+      <td>{{ product.nombre_producto }}</td>
+      <td>
+        <p-button
+          (click)="deleteProduct(product.id_producto)"
+          label="Eliminar"
+          severity="danger"
+        ></p-button>
+        <p-button
+          label="Ver"
+          class="ml-2"
+          [routerLink]="['/' + product.id_producto]"
+        ></p-button>
+        <p-button
+          label="Editar"
+          severity="success"
+          class="ml-2"
+          [routerLink]="['/' + 'update' + '/' + product.id_producto]"
+        />
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

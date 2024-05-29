@@ -1,0 +1,27 @@
+<h1>Actualizar producto {{ product.nombre_producto }}</h1>
+<form action="" (ngSubmit)="updateProduct()">
+  <div class="flex flex-column gap-2 mb-4">
+    <label for="username">Nombre del producto</label>
+    <input
+      pInputText
+      [(ngModel)]="product.nombre_producto"
+      name="nombre_producto"
+    />
+    <small id="username-help"> Ingresa el nombre del producto </small>
+  </div>
+  <div class="flex flex-column gap-2 mb-4">
+    <label for="username">Precio del producto</label>
+    <input
+      pInputText
+      [(ngModel)]="product.precio_producto"
+      name="precio_producto"
+    />
+    <small id="username-help"> Ingresa el precio del producto </small>
+  </div>
+  <button
+    pButton
+    class="cursor-pointer border-round text-white bg-teal-800 text-xl p-3 w-11rem font-semibold align border-transparent justify-content-center"
+  >
+    Guardar
+  </button>
+</form>
